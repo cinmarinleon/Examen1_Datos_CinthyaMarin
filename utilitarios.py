@@ -22,3 +22,23 @@ def generar_lista_ids_celulas():
     return celulas
 
 
+# Generar los COD_ANALISTA de forma aleatoria
+
+
+letrasValidasAnalistas = string.ascii_uppercase
+
+def generate_id_analista():
+    identifica = 'A'
+    for i in range(4):
+        identifica += random.choice(letrasValidasAnalistas)
+    return identifica
+
+def generar_lista_ids_analista():
+    analistas = set()
+    for i in range(4):
+        while True:
+            ident = generate_id()
+            if ident not in analistas:
+                analistas.add(ident)
+                break
+    return analistas
