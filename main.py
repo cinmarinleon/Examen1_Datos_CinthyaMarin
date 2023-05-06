@@ -1,5 +1,6 @@
 import utilitarios
 from utilitarios import *
+import pandas as pd
 
 # Generar las celulas
 
@@ -55,7 +56,9 @@ for paciente in listaPacientes:
         }
         datosAplanados.append(unPaciente)
 
+dataframe = pd.DataFrame(datosAplanados)
 
+dataframe.to_csv("baseDatosCelulas.csv",index=False)
 
 
 
