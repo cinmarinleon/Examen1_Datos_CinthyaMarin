@@ -1,9 +1,19 @@
+import utilitarios
 from utilitarios import *
 
-ID_CELULAS = generar_lista_ids_celulas()
+unPaciente = {
+    "idPaciente": utilitarios.generar_id_pacientes(),
+    "edad": utilitarios.generar_numero_aleatorio(0,1200),
+    "condicion": utilitarios.generar_estado_salud(),
 
-COD_ANALISTA= generar_lista_ids_analista()
+}
 
-print(ID_CELULAS)
+unaCelula = {
+    "idCelula": utilitarios.generar_id_celula(),
+    "analista": utilitarios.generar_id_analista(),
+    "radioX": utilitarios.generar_numero_aleatorio(5,99),
+    "radioY": utilitarios.generar_numero_aleatorio(5,99),
+    "radioZ": utilitarios.generar_numero_aleatorio(5,99),
 
-print(COD_ANALISTA)
+}
+
