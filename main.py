@@ -1,19 +1,21 @@
 import utilitarios
 from utilitarios import *
 import pandas as pd
+import random
 
 # Generar las celulas
 
 idCelulasString = utilitarios.generar_lista_ids_celulas()
+idsAnalistas = utilitarios.generar_lista_ids_analista()
 
 pilaCelulas = []
 for celula in idCelulasString:
     unaCelula = {
         "ID_CELULA": celula,
-        "COD_ANALISTA": utilitarios.generar_id_analista(),
-        "DIM_RAD_NM_X": utilitarios.generar_numero_aleatorio(5,99),
-        "DIM_RAD_NM_Y": utilitarios.generar_numero_aleatorio(5,99),
-        "DIM_RAD_NM_Z": utilitarios.generar_numero_aleatorio(5,99),
+        "COD_ANALISTA": random.choice(idsAnalistas),
+        "DIM_RAD_NM_X": utilitarios.generar_numero_aleatorio(1,10),
+        "DIM_RAD_NM_Y": utilitarios.generar_numero_aleatorio(1,10),
+        "DIM_RAD_NM_Z": utilitarios.generar_numero_aleatorio(1,10),
     }
     pilaCelulas.append(unaCelula)
 
@@ -60,6 +62,5 @@ dataframe = pd.DataFrame(datosAplanados)
 
 dataframe.to_csv("baseDatosCelulas.csv",index=False)
 
-dataframe.to_excel("baseDatosCelulas.excel",index=True)
 
 

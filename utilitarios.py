@@ -35,12 +35,12 @@ def generar_id_analista():
     return identifica
 
 def generar_lista_ids_analista():
-    analistas = set()
+    analistas = []
     for i in range(4):
         while True:
             ident = generar_id_analista()
             if ident not in analistas:
-                analistas.add(ident)
+                analistas.append(ident)
                 break
     return analistas
 
