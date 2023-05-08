@@ -60,5 +60,6 @@ dataframe = pd.DataFrame(datosAplanados)
 
 dataframe.to_csv("baseDatosCelulas.csv",index=False)
 
+dataframe.to_excel("baseDatosCelulas.excel",index=True)
 
 
